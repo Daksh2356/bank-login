@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+This is an app with a beautiful UI with an idea that the user can login to their bank account with the credentials.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
