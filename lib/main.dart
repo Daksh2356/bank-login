@@ -1,3 +1,4 @@
+import 'package:analyzer/error/error.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,23 +9,23 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: SignInScreen(),
-        debugShowCheckedModeBanner: false);
+    return const MaterialApp(
+        home: signInScreen(), debugShowCheckedModeBanner: false);
   }
 }
 
-class SignInScreen extends StatefulWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+class signInScreen extends StatefulWidget {
+  const signInScreen({Key? key}) : super(key: key);
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
+  _signInScreenState createState() => _signInScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {
+class _signInScreenState extends State<signInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset : false,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text(' Login to account '),
       ),
@@ -33,12 +34,12 @@ class _SignInScreenState extends State<SignInScreen> {
           horizontal: 50,
           vertical: 75,
         ),
-        child :SingleChildScrollView(
-          reverse : true,
+        child: SingleChildScrollView(
+          reverse: true,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 50 ),
+              const SizedBox(height: 50),
               Image.asset("assets/bank.png"),
               const SizedBox(height: 15),
               const Text(
@@ -56,7 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               const SizedBox(height: 20),
               const Text(
-                "Forgot Password ? " ,
+                "Forgot Password ? ",
                 style: TextStyle(
                     fontSize: 12,
                     color: Colors.deepPurpleAccent,
@@ -65,13 +66,15 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(height: 25),
               InkWell(
                 onTap: () {
-                  debugPrint('Credentials Entered !! ! ');
+                  print('Credentials Entered !! ! ');
+                  // print(errorCodeValues);
                 },
                 child: Container(
                   height: 60,
                   width: double.maxFinite,
                   decoration: BoxDecoration(
-                      color: Colors.blue, borderRadius: BorderRadius.circular(5)),
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(5)),
                   child: const Center(
                     child: Text(
                       'LOGIN',
@@ -83,7 +86,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 50 ),
+              const SizedBox(height: 50),
               const Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -95,7 +98,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 5 ),
+              const SizedBox(height: 5),
               const Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -110,7 +113,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ],
           ),
         ),
-        ),
+      ),
     );
   }
 }
