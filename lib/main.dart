@@ -52,6 +52,7 @@ class _signInScreenState extends State<signInScreen> {
                     prefixIcon: Icon(Icons.email), hintText: "Email Address"),
               ),
               TextFormField(
+                obscureText: true,
                 decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock), hintText: "Password"),
               ),
@@ -67,7 +68,6 @@ class _signInScreenState extends State<signInScreen> {
               InkWell(
                 onTap: () {
                   print('Credentials Entered !! ! ');
-                  // print(errorCodeValues);
                 },
                 child: Container(
                   height: 60,
